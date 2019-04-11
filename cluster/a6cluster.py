@@ -4,7 +4,7 @@ Cluster class for k-Means clustering
 This file contains the class cluster, which is the second part of the assignment.  With
 this class done, the visualization can display the centroid of a single cluster.
 
-YOUR NAME(S) AND NETID(S) HERE
+John O'Donnell (jro79) and Anthony Nguyen (an523)
 DATE COMPLETED HERE
 """
 import math
