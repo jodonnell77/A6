@@ -6,6 +6,7 @@ We have written the first for you.  You will probably want to write others.
 
 John O'Donnell (jro79) and Anthony Nguyen (an523)
 4/11/19 johns message
+4/11/19 anthonys message part two
 """
 import math
 import random
