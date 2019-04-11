@@ -63,31 +63,26 @@ class Dataset(object):
         Parameter song_ids: the ids of songs in the playlist.
         Precondition: song_ids is either the empty list or a list of the same length of contents
         """
-        # This is a test comment
-        # BEGIN REMOVE
-        pass
-        # END REMOVE
-        # IMPLEMENT ME
+        self.dim = dim
+        self.contents = contents
+        self.song_ids = song_ids
+
 
 
     def getDimension(self):
         """
         Returns the point dimension of this data set
         """
-        # BEGIN REMOVE
-        pass
-        # END REMOVE
-        # IMPLEMENT ME
+        dim = self.dim
+        return dim
 
 
     def getSongIds(self):
         """
         Returns the song ids of this data set
         """
-        # BEGIN REMOVE
-        pass
-        # END REMOVE
-        # IMPLEMENT ME
+        
+
 
 
     def getSize(self):
