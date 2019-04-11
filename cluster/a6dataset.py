@@ -60,9 +60,10 @@ class Dataset(object):
         If contents is not None, then contents if not empty and the number of columns is
         equal to dim.
 
-        Parameter song_ids: the ids of songs in the playlist. 
+        Parameter song_ids: the ids of songs in the playlist.
         Precondition: song_ids is either the empty list or a list of the same length of contents
         """
+        # This is a test comment
         # BEGIN REMOVE
         pass
         # END REMOVE
