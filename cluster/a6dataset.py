@@ -5,7 +5,7 @@ This file contains the class Dataset, which is the very first part of the assign
 You cannot do anything in this assignment (except run the unit test) before this class
 is finished.
 
-YOUR NAME(S) AND NETID(S) HERE
+Anthony Nguyen an523 and John O'Donnel jro79
 DATE COMPLETED HERE
 """
 import math
