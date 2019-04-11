@@ -4,8 +4,8 @@ Helper functions for k-Means clustering
 This file contains the functions for enforcing preconditions for k-means clustering.
 We have written the first for you.  You will probably want to write others.
 
-YOUR NAME(S) AND NETID(S) HERE
-DATE COMPLETED HERE
+John O'Donnell (jro79) and Anthony Nguyen (an523)
+4/11/19
 """
 import math
 import random
