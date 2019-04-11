@@ -6,7 +6,7 @@ You cannot do anything in this assignment (except run the unit test) before this
 is finished.
 
 Anthony Nguyen an523 and John O'Donnel jro79
-DATE COMPLETED HERE
+4/11/19
 """
 import math
 import random
@@ -63,12 +63,9 @@ class Dataset(object):
         Parameter song_ids: the ids of songs in the playlist.
         Precondition: song_ids is either the empty list or a list of the same length of contents
         """
-        # This is a test comment
-        # BEGIN REMOVE
-        pass
-        # END REMOVE
-        # IMPLEMENT ME
-
+        self.dim = dim
+        self.contents = contents
+        self. song_ids = song_ids
 
     def getDimension(self):
         """
