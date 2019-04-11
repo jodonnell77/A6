@@ -5,7 +5,7 @@ This file contains the functions for enforcing preconditions for k-means cluster
 We have written the first for you.  You will probably want to write others.
 
 John O'Donnell (jro79) and Anthony Nguyen (an523)
-4/11/19 ants message
+4/11/19 johns message
 """
 import math
 import random
