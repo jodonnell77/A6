@@ -64,37 +64,44 @@ class Dataset(object):
         Precondition: song_ids is either the empty list or a list of the same length of contents
         """
         self.dim = dim
-        self.contents = contents
-        self. song_ids = song_ids
+
+        if contents == None:
+            self._contents = []
+            self._song_ids = []
+
+        elif contents != None:
+            self._contents = []                                                      #Starting off with empty accumulator
+            self._song_ids = []
+            for x in range(len(contents)):                                           #copies a column to _contents for every column in contents
+                self._contents.append([])
+                for n in range(len(contents[x])):                                    #iterates through and copies every element within column
+                    self._contents[x].append(contents[x][n])
+
+            for x in range(len(song_ids)):                                           #copies a column to _song_ids for every column in song_ids
+                self._song_ids.append([])
+                for n in range(len(song_ids[x])):                                    #iterates through and copies every element within song_ids
+                    self._song_ids[x].append(song_ids[x][n])
+
 
     def getDimension(self):
         """
         Returns the point dimension of this data set
         """
-        # BEGIN REMOVE
-        pass
-        # END REMOVE
-        # IMPLEMENT ME
+        return self.dim
 
 
     def getSongIds(self):
         """
         Returns the song ids of this data set
         """
-        # BEGIN REMOVE
-        pass
-        # END REMOVE
-        # IMPLEMENT ME
+        return self._song_ids
 
 
     def getSize(self):
         """
         Returns the number of elements in this data set.
         """
-        # BEGIN REMOVE
-        pass
-        # END REMOVE
-        # IMPLEMENT ME
+        return len(self._contents)
 
 
     def getContents(self):
@@ -105,10 +112,7 @@ class Dataset(object):
         list will modify the data set.  If you want to access the data set, but want to
         protect yourself from modifying the data, use getPoint() instead.
         """
-        # BEGIN REMOVE
-        pass
-        # END REMOVE
-        # IMPLEMENT ME
+        return self._contents
 
 
     def getPoint(self, i):
@@ -126,10 +130,6 @@ class Dataset(object):
         Parameter i: the index position of the point
         Precondition: i is an int that refers to a valid position in 0..getSize()-1
         """
-        # BEGIN REMOVE
-        pass
-        # END REMOVE
-        # IMPLEMENT ME
 
 
     def addPoint(self,point):
