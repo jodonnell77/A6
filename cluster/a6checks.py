@@ -19,7 +19,12 @@ def is_point(value):
     Parameter value: a value to check
     Precondition: value can be anything
     """
-    pass
+    if(type(value) != list or len(value) == 0):
+        return False
+    for i in range(0,len(value)):
+        if(type(value[i]) != int and type(value[i]) != float):
+            return False
+    return True
 
 
 # ADD MORE HELPER FUNCTIONS FOR ASSERTS HERE
