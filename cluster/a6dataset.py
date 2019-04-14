@@ -70,16 +70,16 @@ class Dataset(object):
             self._song_ids = []
 
         elif contents != None:
-            self._contents = []                                                      #Starting off with empty accumulator
+            self._contents = []                                                      #Starting off with empty accumulator for _contents and _song_ids
             self._song_ids = []
             for x in range(len(contents)):                                           #copies a column to _contents for every column in contents
                 self._contents.append([])
-                for n in range(len(contents[x])):                                    #iterates through and copies every element within column
+                for n in range(len(contents[x])):                                    #iterates through column and copies every element within column
                     self._contents[x].append(contents[x][n])
 
             for x in range(len(song_ids)):                                           #copies a column to _song_ids for every column in song_ids
                 self._song_ids.append([])
-                for n in range(len(song_ids[x])):                                    #iterates through and copies every element within song_ids
+                for n in range(len(song_ids[x])):                                    #iterates through column and copies every element within song_ids
                     self._song_ids[x].append(song_ids[x][n])
 
 
@@ -130,6 +130,12 @@ class Dataset(object):
         Parameter i: the index position of the point
         Precondition: i is an int that refers to a valid position in 0..getSize()-1
         """
+
+        point = []                                                                #empty accumulator point list
+        for n in range(len(self._contents[i])):                                    #iterates through column and copies every element within column to
+            point.append(self._contents[i][n])
+        return point
+
 
 
     def addPoint(self,point):
