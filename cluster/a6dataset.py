@@ -145,10 +145,11 @@ class Dataset(object):
         This method does not add the point directly. It adds a copy of the point.
 
         Precondition: point is a list of numbers (int or float),  len(point) = _dimension."""
-        # BEGIN REMOVE
-        pass
-        # END REMOVE
-        # IMPLEMENT ME
+
+        copy_point = point[:]
+        return self._contents.append(copy_point)
+
+
 
 
     def standardize(self):
