@@ -64,7 +64,7 @@ class Cluster(object):
 
         self._dataset = dset
         self._centroid = centroid
-        self._indices = range(len(dset.))
+        self._indices = range(len(dset._contents))
         self._name = name
 
 
