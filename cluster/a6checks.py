@@ -67,6 +67,7 @@ def is_seed_list(value, k, size):
     Paramater size: The database size
     Precondition: size is an int > 0
     """
+    assert type(k) == int and type(size) == int, "k and size must be integers"
     assert size > 0, "Size must be greater than 0"
     assert k > 0, "k must be greater than 0"
 
