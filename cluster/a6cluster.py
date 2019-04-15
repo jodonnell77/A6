@@ -56,19 +56,12 @@ class Cluster(object):
         Parameter name: the name of the cluster centroid
         Precondition: a string, possibly empty
         """
-<<<<<<< HEAD
-
-        assert isinstance(dset, a6dataset.Dataset) == True
-
-
-=======
         # Asserting Preconditions
         assert isinstance(dset, Dataset), "dset must be of type Dataset"
-        
+
         pass
         # END REMOVE
         # IMPLEMENT ME
->>>>>>> 5dd51937f0792cbe27efb274a2161ae518c9b379
 
 
     def getCentroid(self):
