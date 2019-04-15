@@ -129,7 +129,7 @@ class Cluster(object):
         """
         Removes all points from this cluster, but leave the centroid unchanged.
         """
-        self._indices = [] 
+        self._indices = []
 
 
     def getContents(self):
@@ -138,10 +138,14 @@ class Cluster(object):
 
         The result is a list of list of numbers.  It has to be computed from the indices.
         """
-        # BEGIN REMOVE
-        pass
-        # END REMOVE
-        # IMPLEMENT ME
+        new_list=[]
+        for x in (self._indices):
+            new_list.append([])
+            for n in range(len(self._dataset._contents[x])):
+                new_list[x].append(self._dataset._contents[x][n])
+
+        return new_list
+
 
 
     # Part B
