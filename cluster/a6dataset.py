@@ -63,10 +63,10 @@ class Dataset(object):
         Parameter song_ids: the ids of songs in the playlist.
         Precondition: song_ids is either the empty list or a list of the same length of contents
         """
-
-        assert type(dim) == int and dim > 0                                             #Asserting Preconditions
-        #assert contents == None or a6checks.is_point_list(contents) == True
-        #assert song_ids == [] or a6checks.is_point_list(song_ids) == True
+        #Asserting Preconditions
+        assert type(dim) == int and dim > 0                                             
+        assert contents == None or a6checks.is_point_list(contents) == True
+        assert song_ids == [] or a6checks.is_point_list(song_ids) == True
 
 
         self.dim = dim
