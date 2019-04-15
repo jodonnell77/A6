@@ -152,7 +152,9 @@ class Dataset(object):
 
         Precondition: point is a list of numbers (int or float),  len(point) = _dimension."""
 
-        #assert a6checks.is_point_list(point) == True                               #Assert Precondition
+        #Assert Precondition
+        assert a6checks.is_point_list(point) == True    
+                                   
         copy_point = point[:]
         return self._contents.append(copy_point)
 

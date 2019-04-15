@@ -56,7 +56,9 @@ class Cluster(object):
         Parameter name: the name of the cluster centroid
         Precondition: a string, possibly empty
         """
-        # BEGIN REMOVE
+        # Asserting Preconditions
+        assert isinstance(dset, Dataset), "dset must be of type Dataset"
+        
         pass
         # END REMOVE
         # IMPLEMENT ME
