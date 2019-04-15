@@ -57,15 +57,10 @@ class Cluster(object):
         Precondition: a string, possibly empty
         """
         # Asserting Preconditions
-        assert isinstance(dset, Dataset), "dset must be of type Dataset"
-<<<<<<< HEAD
-
-=======
+        assert isinstance(dset, a6dataset.Dataset), "dset must be of type Dataset"
         assert isinstance(name, str)
->>>>>>> 40967d69d19111856521593b475fb6beab44949f
-        pass
-        # END REMOVE
-        # IMPLEMENT ME
+        self._centroid = centroid
+        self._indices = range(len(dset.))
 
 
     def getCentroid(self):
