@@ -56,19 +56,12 @@ class Cluster(object):
         Parameter name: the name of the cluster centroid
         Precondition: a string, possibly empty
         """
-<<<<<<< HEAD
-
-        assert isinstance(dset, a6dataset.Dataset) == True
-
-
-=======
         # Asserting Preconditions
         assert isinstance(dset, Dataset), "dset must be of type Dataset"
         assert isinstance(name, str)
         pass
         # END REMOVE
         # IMPLEMENT ME
->>>>>>> 5dd51937f0792cbe27efb274a2161ae518c9b379
 
 
     def getCentroid(self):
@@ -77,13 +70,8 @@ class Cluster(object):
 
         This getter method is to protect access to the centroid.
         """
-<<<<<<< HEAD
-        
-        return self.dset.getCentroid()
-=======
 
         return self._centroid
->>>>>>> 825aaa39c5e9fa1e70360973054044e92ba0b55d
 
 
     def getName(self):
