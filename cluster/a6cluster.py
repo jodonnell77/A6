@@ -63,9 +63,9 @@ class Cluster(object):
         assert isinstance(name, str)
 
         self._dataset = dset
-        self._centroid = centroid
+        self._centroid = centroid[:]
         self._name = name
-        self._indices = 0 
+        self._indices = []
 
 
     def getCentroid(self):
@@ -119,7 +119,9 @@ class Cluster(object):
         Precondition: index is a valid index into this cluster's dataset.
         That is, index is an int in the range 0.._dataset.getSize()-1.
         """
-        self._indices.append(index)
+        assert index in range(self._dataset.getSize())
+        if index not in self._indices:
+            self._indices.append(index)
 
 
 
@@ -127,10 +129,7 @@ class Cluster(object):
         """
         Removes all points from this cluster, but leave the centroid unchanged.
         """
-        # BEGIN REMOVE
-        pass
-        # END REMOVE
-        # IMPLEMENT ME
+        self._indices = [] 
 
 
     def getContents(self):
