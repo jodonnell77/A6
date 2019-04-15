@@ -64,8 +64,8 @@ class Cluster(object):
 
         self._dataset = dset
         self._centroid = centroid
-        self._indices = range(len(dset._contents))
         self._name = name
+        self._indices = 0 
 
 
     def getCentroid(self):
@@ -119,6 +119,7 @@ class Cluster(object):
         Precondition: index is a valid index into this cluster's dataset.
         That is, index is an int in the range 0.._dataset.getSize()-1.
         """
+        self._indices.append(index)
 
 
 
