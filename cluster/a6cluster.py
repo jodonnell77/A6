@@ -56,22 +56,20 @@ class Cluster(object):
         Parameter name: the name of the cluster centroid
         Precondition: a string, possibly empty
         """
-        # BEGIN REMOVE
-        pass
-        # END REMOVE
-        # IMPLEMENT ME
+
+        assert isinstance(dset, a6dataset.Dataset) == True
+
+
 
 
     def getCentroid(self):
         """
-        Returns the centroid of this cluster. Does not return a copy. 
+        Returns the centroid of this cluster. Does not return a copy.
 
         This getter method is to protect access to the centroid.
         """
-        # BEGIN REMOVE
-        pass
-        # END REMOVE
-        # IMPLEMENT ME
+
+        return self._centroid
 
 
     def getName(self):
@@ -80,11 +78,9 @@ class Cluster(object):
 
         This getter method is to protect access to the centroid.
         """
-        # BEGIN REMOVE
-        pass
-        # END REMOVE
-        # IMPLEMENT ME
-    
+
+        return self._name
+
 
     def setName(self,name):
         """
@@ -92,10 +88,9 @@ class Cluster(object):
 
         Precondition: name is a string
         """
-        # BEGIN REMOVE
-        pass
-        # END REMOVE
-        # IMPLEMENT ME
+
+        assert type(name) == str
+        self._name = name
 
 
     def getIndices(self):
@@ -105,10 +100,7 @@ class Cluster(object):
         This method returns the attribute _indices directly.  Any changes made to this
         list will modify the cluster.
         """
-        # BEGIN REMOVE
-        pass
-        # END REMOVE
-        # IMPLEMENT ME
+        return self._indices
 
 
     def addIndex(self, index):
@@ -121,10 +113,7 @@ class Cluster(object):
         Precondition: index is a valid index into this cluster's dataset.
         That is, index is an int in the range 0.._dataset.getSize()-1.
         """
-        # BEGIN REMOVE
-        pass
-        # END REMOVE
-        # IMPLEMENT ME
+
 
 
     def clear(self):
@@ -198,12 +187,12 @@ class Cluster(object):
 
     def findError(self):
         """
-        Returns: a float representing the total error of the centroid. 
+        Returns: a float representing the total error of the centroid.
 
-        The total error is calculated as the total squared distance from every point 
+        The total error is calculated as the total squared distance from every point
         belonging to that centroid to the center of the centroid.
 
-        For example, if their is 2 points, one 1 unit from the center and another point 
+        For example, if their is 2 points, one 1 unit from the center and another point
         2 units from the center the error for this centroid would be 5 as we have
         1 * 1 + 2 * 2 = 5.
 
@@ -229,7 +218,7 @@ class Cluster(object):
         Returns an unambiguous representation of this cluster.
 
         You do NOT have to use this function in your implementation if you do not want
-        to. This provides more infomation for assert statements and can be used 
+        to. This provides more infomation for assert statements and can be used
         in place of the str method however, this method is deemed out of scope for
         A6 ,so do not stress if you do not understand __repr__.
         """
