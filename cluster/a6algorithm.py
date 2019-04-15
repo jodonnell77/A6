@@ -48,10 +48,9 @@ class Algorithm(object):
         Paramter seeds: the initial cluster indices (OPTIONAL)
         Precondition seeds is None, or a list of k valid indices into dset.
         """
-        # BEGIN REMOVE
-        pass
-        # END REMOVE
-        # IMPLEMENT ME
+        assert isinstance(dset, a6dataset.Dataset)
+        assert isinstance(k, int) and k > 0 and k <= dset.getSize()
+        assert seeds == None or a6checks.is_seed_list(seeds)
 
 
     def getClusters(self):

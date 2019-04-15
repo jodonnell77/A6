@@ -70,5 +70,8 @@ def is_seed_list(value, k, size):
     assert type(k) == int and type(size) == int, "k and size must be integers"
     assert size > 0, "Size must be greater than 0"
     assert k > 0, "k must be greater than 0"
+    assert isinstance(value, list), "value must be a list of indicies"
+    assert len(value) == k, "value must be of size k"
+
 
     pass
