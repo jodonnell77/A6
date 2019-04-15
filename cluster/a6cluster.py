@@ -58,7 +58,7 @@ class Cluster(object):
         """
         # Asserting Preconditions
         assert isinstance(dset, Dataset), "dset must be of type Dataset"
-        
+        assert isinstance(name, str)
         pass
         # END REMOVE
         # IMPLEMENT ME
@@ -70,10 +70,8 @@ class Cluster(object):
 
         This getter method is to protect access to the centroid.
         """
-        # BEGIN REMOVE
-        pass
-        # END REMOVE
-        # IMPLEMENT ME
+        
+        return self.dset.getCentroid()
 
 
     def getName(self):
