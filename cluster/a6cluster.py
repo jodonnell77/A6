@@ -57,14 +57,14 @@ class Cluster(object):
         Precondition: a string, possibly empty
         """
         # Asserting Preconditions
-        assert isinstance(dset, Dataset), "dset must be of type Dataset"
+        assert isinstance(dset, a6dataset.Dataset), "dset must be of type Dataset"
         assert isinstance(centroid, list)
         assert len(centroid) == dset.getDimension()
         assert isinstance(name, str)
 
         self._dataset = dset
         self._centroid = centroid
-        self._indices = range(len(dset.))
+        self._indices = range(len(dset._contents))
         self._name = name
 
 
