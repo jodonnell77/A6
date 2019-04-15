@@ -37,8 +37,22 @@ def is_point_list(value):
     Parameter value: a value to check
     Precondition: value can be anything
     """
-    pass
+    if(type(value) != list or len(value) == 0):
+        return False
+    for i in range(0,len(value)):
+        if(type(value[i]) != list):
+            return False
+        if( not is_point(value[i]) ):
+            return False
 
+    for i in range(0,len(value)):
+        if(i == 0):
+            pass
+        else:
+            for ii in range(0,len(value)-1):
+                if(len(value[i]) != len(value[ii])):
+                    return False
+    return True
 
 def is_seed_list(value, k, size):
     """
@@ -53,4 +67,5 @@ def is_seed_list(value, k, size):
     Paramater size: The database size
     Precondition: size is an int > 0
     """
+
     pass
