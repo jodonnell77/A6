@@ -71,10 +71,11 @@ def is_seed_list(value, k, size):
     assert size > 0, "Size must be greater than 0"
     assert k > 0, "k must be greater than 0"
     assert isinstance(value, list), "value must be a list of indicies"
-    assert len(value) == k, "value must be of size k"
-
+ 
+    if(len(value) != k):
+        return False
 
     for i in range(0,len(value)):
-        if(value[i] < 0 or value[i] > len(value)):
+        if(value[i] < 0 or value[i] > size -1):
             return False
     return True
