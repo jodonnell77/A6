@@ -234,9 +234,13 @@ def test_cluster_b():
     print('    Method Cluster.getRadius() looks okay')
 
     # TEST CASE 1 (updateCentroid): centroid remains the same
+    print('begining update')
     stable = cluster2.update()
+    print('past')
     introcs.assert_float_lists_equal([0.5, 0.5, 0.0], cluster2.getCentroid())
+    print('past')
     introcs.assert_true(stable)
+    print('past')
 
     # TEST CASE 2 (updateCentroid): centroid changes
     cluster2.addIndex(2)

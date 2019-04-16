@@ -191,22 +191,28 @@ class Cluster(object):
         If there are no points in the cluster, the centroid. does not change.
         """
 
-        indicielist = self.getIndicies()
-        sum_list = []
-
-        if(self.getIndices() == 0):
+        #	You will need to first go through all the points, adding up their coordinates.
+        #You need the sum of the first coordinates of all the points in the cluster,
+        #the sum of all the second coordinates, and so on. After that, you will need
+        #to divide by the number of points in the cluster. Finally, you need to decide whether
+        # the centroid has changed. The function numpy.allclose is mentioned in the specification.
+        # This function takes two lists of numbers and tells you whether the corresponding numbers
+        #from the two lists are all very close in value.
+        old_centroid = self._centroid[:]
+        new_centroid = []
+        points = Cluster.getContents(self)
+        for n in range(a6dataset.Dataset.getDimension(self._dataset)):
+            sum_cord = 0
+            avg_cord = 0
+            for x in range(len(points)):
+                sum_cord += points[x][n]
+                avg_cord = sum_cord  / a6dataset.Dataset.getDimension(self._dataset)
+                new_centroid.append(avg_cord)
+        if numpy.allclose(old_centroid, new_centroid) == True:
+            self._centroid = new_centroid
             return True
-
-        for i in range(self._dataset.getDimension()):
-            counter = 0
-            for ii in range(len(indicielist)):
-                counter += holderlist[ii][i]
-            sum_list.append(counter/len(self.getContents()))
-            counter = 0
-
-        print(sum_list)
-        print(self.getCentroid())
-        return numpy.allclose(sum_list, self.getCentroid())
+        else:
+            return False
 
     def findError(self):
         """
