@@ -169,10 +169,9 @@ class Cluster(object):
 
         This method loops over the contents to find the maximum distance from the centroid.
         """
-        # BEGIN REMOVE
-        pass
-        # END REMOVE
-        # IMPLEMENT ME
+        list_distance = []
+        
+
 
 
     def update(self):
