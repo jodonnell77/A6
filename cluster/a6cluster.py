@@ -139,13 +139,10 @@ class Cluster(object):
         The result is a list of list of numbers.  It has to be computed from the indices.
         """
         new_list=[]
-        for x in (self._indices):
-            new_list.append([])
-            for n in range(len(self._dataset._contents[x])):
-                new_list[x].append(self._dataset._contents[x][n])
-
+        for x in self._indices:
+            copy = a6dataset.Dataset.getPoint(self._dataset, x)
+            new_list.append(copy)
         return new_list
-
 
 
     # Part B
