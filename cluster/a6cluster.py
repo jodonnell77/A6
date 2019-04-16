@@ -191,7 +191,7 @@ class Cluster(object):
         If there are no points in the cluster, the centroid. does not change.
         """
 
-        holderlist = self.getContents()
+        indicielist = self.getIndicies()
         sum_list = []
 
         if(self.getIndices() == 0):
@@ -199,7 +199,7 @@ class Cluster(object):
 
         for i in range(self._dataset.getDimension()):
             counter = 0
-            for ii in range(len(holderlist)):
+            for ii in range(len(indicielist)):
                 counter += holderlist[ii][i]
             sum_list.append(counter/len(self.getContents()))
             counter = 0
