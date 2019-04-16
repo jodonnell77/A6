@@ -201,17 +201,18 @@ class Cluster(object):
 
         old_centroid = self.getCentroid()
         new_centroid = []
-        points = Cluster.getContents(self)
+        points = self.getContents()
         indicielist = self.getIndices()
 
         for n in range(a6dataset.Dataset.getDimension(self._dataset)):
             sum_cord = 0
             avg_cord = 0
-            for x in range(len(self.getIndices())):
+            for x in range(len(indicielist)):
                 sum_cord += points[indicielist[x]][n]
-            avg_cord = sum_cord  / len(self.getIndices())
+                avg_cord = sum_cord  / len(self.getContents())
             new_centroid.append(avg_cord)
         
+        self._centroid = new_centroid
         return numpy.allclose(old_centroid, new_centroid)
 
 

@@ -241,6 +241,7 @@ def test_cluster_b():
     # TEST CASE 2 (updateCentroid): centroid changes
     cluster2.addIndex(2)
     cluster2.addIndex(3)
+    print(cluster2.getIndices())
     stable = cluster2.update()
     introcs.assert_float_lists_equal([0.25, 0.25, 0.25], cluster2.getCentroid())
     introcs.assert_false(stable)
