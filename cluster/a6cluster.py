@@ -209,10 +209,14 @@ class Cluster(object):
 
         Hint: The method distance() will he helpful.
         """
-        # BEGIN REMOVE
-        pass
-        # END REMOVE
-        # IMPLEMENT ME
+
+        datalist = self.getContents()
+        indiciesist = self.getIndices()
+        total_error = 0
+
+        for i in range(0,len(self.getIndices())):
+            total_error += distance(datalist[indiciesist[i]]) ** 2
+
 
     # PROVIDED METHODS: Do not modify!
     def __str__(self):
