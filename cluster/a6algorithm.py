@@ -5,7 +5,7 @@ This file contains the Algorithm class for performing k-means clustering.  While
 the last part of the assignment, it is the heart of the clustering algorithm.  You
 need this class to view the complete visualizer.
 
-YOUR NAME(S) AND NETID(S) HERE
+Anthony Nguyen an523 and John O'Donnel jro79
 DATE COMPLETED HERE
 """
 import math
@@ -52,6 +52,22 @@ class Algorithm(object):
         assert isinstance(k, int) and k > 0 and k <= dset.getSize()
         assert seeds == None or a6checks.is_seed_list(seeds,k,dset.getSize())
 
+        self._dataset = dset
+        self._clusters = []
+        self.seeds = seeds
+
+        population = a6dataset.Dataset.getContents(self._dataset)
+        length_list = a6dataset.Dataset.getDimension(self._dataset)
+
+        if self.seeds == None:
+            for x in range(k):
+                new_cluster = a6cluster.Cluster(self._dataset, random.sample(population, length_list))
+                self._clusters.append(new_cluster)
+        else:
+            for x in self.seeds:
+                new_cluster = a6cluster.Cluster(self._dataset, self._dataset._contents[x])
+                self._clusters.append(new_cluster)
+
 
     def getClusters(self):
         """
@@ -60,10 +76,7 @@ class Algorithm(object):
         This method returns the attribute _clusters directly.  Any changes made to this
         list will modify the set of clusters.
         """
-        # BEGIN REMOVE
-        pass
-        # END REMOVE
-        # IMPLEMENT ME
+        return self._clusters
 
 
     # Part B
@@ -144,15 +157,15 @@ class Algorithm(object):
         pass
         # END REMOVE
         # IMPLEMENT ME
-    
-    
+
+
     def findTotalError(self):
         """
-        Returns: a float representing the sum of the errors of all the centroids. 
+        Returns: a float representing the sum of the errors of all the centroids.
 
         For example, if we have two centroids and they have errors of 2.0 and 3.0 respectively,
         then the total error would be 5.0 and we would return 5.0.
 
-        Hint: the method and findError() would be helpful in the function. 
+        Hint: the method and findError() would be helpful in the function.
         """
         pass
