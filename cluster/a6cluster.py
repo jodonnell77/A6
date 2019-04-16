@@ -170,8 +170,8 @@ class Cluster(object):
         This method loops over the contents to find the maximum distance from the centroid.
         """
         list_distance = []
-        for x in range(len(self._dataset._contents)):
-            nth_distance = Cluster.distance(self, self._dataset._contents[x])
+        for x in range(len(Cluster.getContents(self))):
+            nth_distance = Cluster.distance(self, Cluster.getContents(self)[x])
             list_distance.append(nth_distance)
         return max(list_distance)
 
@@ -194,7 +194,7 @@ class Cluster(object):
         new_centroid = 0
         if(self.getIndices() == 0):
             return True
-        
+
 
 
     def findError(self):
