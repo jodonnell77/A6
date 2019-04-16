@@ -199,22 +199,20 @@ class Cluster(object):
         # This function takes two lists of numbers and tells you whether the corresponding numbers
         #from the two lists are all very close in value.
 
-        old_centroid = self._centroid[:]
+        old_centroid = self.getCentroid()
         new_centroid = []
         points = Cluster.getContents(self)
+        indicielist = self.getIndices()
+
         for n in range(a6dataset.Dataset.getDimension(self._dataset)):
             sum_cord = 0
             avg_cord = 0
-            for x in range(len(points)):
-                sum_cord += points[x][n]
-                avg_cord = sum_cord  / a6dataset.Dataset.getDimension(self._dataset)
-                new_centroid.append(avg_cord)
+            for x in range(len(self.getIndices())):
+                sum_cord += points[indicielist[x]][n]
+            avg_cord = sum_cord  / len(self.getIndices())
+            new_centroid.append(avg_cord)
         
-        if numpy.allclose(old_centroid, new_centroid) == True:
-            self._centroid = new_centroid
-            return True
-        else:
-            return False
+        return numpy.allclose(old_centroid, new_centroid)
 
     def findError(self):
         """
