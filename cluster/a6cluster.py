@@ -198,6 +198,11 @@ class Cluster(object):
         # the centroid has changed. The function numpy.allclose is mentioned in the specification.
         # This function takes two lists of numbers and tells you whether the corresponding numbers
         #from the two lists are all very close in value.
+<<<<<<< HEAD
+=======
+
+        old_centroid = self._centroid[:]
+>>>>>>> bc88338c0d011caa961942fe44d8023bfadbf54e
         new_centroid = []
         points = a6dataset.Dataset.getContents(self._dataset)
         for n in range(a6dataset.Dataset.getDimension(self._dataset)):
@@ -207,13 +212,17 @@ class Cluster(object):
                 sum_cord += points[x][n]
                 avg_cord = sum_cord  / a6dataset.Dataset.getDimension(self._dataset)
                 new_centroid.append(avg_cord)
+<<<<<<< HEAD
 
         if numpy.allclose(self._centroid, new_centroid) == True:
+=======
+        
+        if numpy.allclose(old_centroid, new_centroid) == True:
+>>>>>>> bc88338c0d011caa961942fe44d8023bfadbf54e
             self._centroid = new_centroid
             return True
         else:
             return False
-
 
     def findError(self):
         """

@@ -74,4 +74,7 @@ def is_seed_list(value, k, size):
     assert len(value) == k, "value must be of size k"
 
 
-    pass
+    for i in range(0,len(value)):
+        if(value[i] < 0 or value[i] > len(value)):
+            return False
+    return True
