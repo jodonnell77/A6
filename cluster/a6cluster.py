@@ -155,10 +155,9 @@ class Cluster(object):
         as the centroid.
         """
         assert len(point) == a6dataset.Dataset.getDimension(self._dataset)
-        centroid = self._centroid[:]
         sum = 0
         for x in range(a6dataset.Dataset.getDimension(self._dataset)):
-            diff = point[x] - centroid[x]
+            diff = point[x] - self._centroid[x]
             diff_squared = math.pow(diff,2)
             sum += diff_squared
         euclidean = math.sqrt(sum)
