@@ -219,6 +219,7 @@ class Cluster(object):
 
         for i in range(0,len(self.getIndices())):
             total_error += distance(datalist[indiciesist[i]]) ** 2
+        return total_error
 
 
     # PROVIDED METHODS: Do not modify!
