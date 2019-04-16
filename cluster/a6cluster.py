@@ -214,6 +214,8 @@ class Cluster(object):
         
         return numpy.allclose(old_centroid, new_centroid)
 
+
+
     def findError(self):
         """
         Returns: a float representing the total error of the centroid.
