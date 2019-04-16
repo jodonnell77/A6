@@ -50,7 +50,7 @@ class Algorithm(object):
         """
         assert isinstance(dset, a6dataset.Dataset)
         assert isinstance(k, int) and k > 0 and k <= dset.getSize()
-        assert seeds == None or a6checks.is_seed_list(seeds)
+        assert seeds == None or a6checks.is_seed_list(seeds,k,dset.getSize())
 
 
     def getClusters(self):
