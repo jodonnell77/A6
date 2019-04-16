@@ -154,11 +154,14 @@ class Cluster(object):
         Precondition: point is a list of numbers (int or float), with the same dimension
         as the centroid.
         """
-        # BEGIN REMOVE
-        pass
-        # END REMOVE
-        # IMPLEMENT ME
-
+        assert len(point) == a6dataset.Dataset.getDimension(self._dataset)
+        sum = 0
+        for x in range(a6dataset.Dataset.getDimension(self._dataset)):
+            diff = point[x] - self._centroid[x]
+            diff_squared = math.pow(diff,2)
+            sum += diff_squared
+        euclidean = math.sqrt(sum)
+        return euclidean
 
     def getRadius(self):
         """
