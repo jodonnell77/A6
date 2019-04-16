@@ -57,10 +57,11 @@ class Algorithm(object):
         self.seeds = seeds
         population = a6dataset.Dataset.getContents(self._dataset)
         length_list = a6dataset.Dataset.getDimension(self._dataset)
+        random_point_list = random.sample(population, k)
 
         if self.seeds == None: #choose random centroids
             for x in range(k):
-                new_cluster = a6cluster.Cluster(self._dataset, random.sample(population[x], length_list))
+                new_cluster = a6cluster.Cluster(self._dataset, random_point_list[x])
                 self._clusters.append(new_cluster)
         else:
             for x in self.seeds:
