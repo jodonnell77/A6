@@ -189,10 +189,11 @@ class Cluster(object):
 
         If there are no points in the cluster, the centroid. does not change.
         """
-        # BEGIN REMOVE
-        pass
-        # END REMOVE
-        # IMPLEMENT ME
+
+        new_centroid = 0
+        if(self.getIndices() == 0):
+            return True
+        
 
 
     def findError(self):
