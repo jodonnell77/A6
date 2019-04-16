@@ -191,11 +191,22 @@ class Cluster(object):
         If there are no points in the cluster, the centroid. does not change.
         """
 
-        new_centroid = 0
+        holderlist = self.getContents()
+        sum_list = []
+
         if(self.getIndices() == 0):
             return True
 
+        for i in range(self._dataset.getDimension()):
+            counter = 0
+            for ii in range(len(holderlist)):
+                counter += holderlist[ii][i]
+            sum_list.append(counter/len(self.getContents()))
+            counter = 0
 
+        print(sum_list)
+        print(self.getCentroid())
+        return numpy.allclose(sum_list, self.getCentroid())
 
     def findError(self):
         """
