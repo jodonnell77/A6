@@ -64,7 +64,7 @@ class Dataset(object):
         Precondition: song_ids is either the empty list or a list of the same length of contents
         """
         #Asserting Preconditions
-        assert type(dim) == int and dim > 0                                             
+        assert type(dim) == int and dim > 0
         assert contents == None or a6checks.is_point_list(contents) == True
         assert song_ids == [] or a6checks.is_point_list(song_ids) == True
 
@@ -153,8 +153,8 @@ class Dataset(object):
         Precondition: point is a list of numbers (int or float),  len(point) = _dimension."""
 
         #Assert Precondition
-        assert a6checks.is_point(point) == True    
-                                   
+        assert a6checks.is_point(point) == True
+
         copy_point = point[:]
         return self._contents.append(copy_point)
 

@@ -269,7 +269,9 @@ def test_algorithm_a():
     km = a6algorithm.Algorithm(dset, 3)
     # Should have 3 clusters
     introcs.assert_equals(len(km.getClusters()), 3)
+
     for clust in km.getClusters():
+        print(clust.getCentroid)
         # cluster centroids should have been chosen from items
         introcs.assert_true(clust.getCentroid() in items)
         # cluster centroids should be distinct (since items are)
