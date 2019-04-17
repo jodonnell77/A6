@@ -205,7 +205,7 @@ class Cluster(object):
         indicielist = self.getIndices()
 
         for n in range(a6dataset.Dataset.getDimension(self._dataset)):
-            print("n in the first loop is:" + str(n))
+            # print("n in the first loop is:" + str(n))
             sum_cord = 0
             avg_cord = 0
             for x in range(len(indicielist)):
