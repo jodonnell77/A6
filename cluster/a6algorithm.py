@@ -105,7 +105,7 @@ class Algorithm(object):
             if(i==0):
                 nearest_cluster = list_of_clusters[i]
                 nearest_distance = list_of_clusters[i].distance(point)
-    
+
             if(list_of_clusters[i].distance(point) < nearest_distance):
                 nearest_cluster = list_of_clusters[i]
                 nearest_distance = list_of_clusters[i].distance(point)
@@ -123,7 +123,7 @@ class Algorithm(object):
         for i in range(len(self.getClusters())):
             self._clusters[i].clear()
 
-        for operating_cluster in self.:
+        for operating_cluster in self.getClusters():
             for i in range(len(self._dataset.getContents())):
                 point_to_add = self._dataset.getPoint(i)
                 cluster_added_to = self._nearest(point_to_add)
@@ -160,11 +160,8 @@ class Algorithm(object):
         This method performs one cycle of the k-means algorithm. It then checks if
         the algorithm has converged and returns the appropriate value.
         """
-        # In a cycle, we partition the points and then update the means.
-        # BEGIN REMOVE
-        pass
-        # END REMOVE
-        # IMPLEMENT ME
+
+
 
 
     # Part D
