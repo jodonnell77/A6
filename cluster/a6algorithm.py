@@ -128,7 +128,6 @@ class Algorithm(object):
                 point_to_add = self._dataset.getPoint(i)
                 cluster_added_to = self._nearest(point_to_add)
                 if(cluster_added_to == operating_cluster):
-                    print("index being added is " + str(i))
                     operating_cluster.addIndex(i)
 
 
@@ -146,11 +145,13 @@ class Algorithm(object):
         """
 
         cluster_list = self.getClusters()
+        true_false_list = []
 
         for i in range(len(cluster_list)):
-            if(cluster_list[i].update() == False):
-                return False
-        return True
+            tfcounter = None
+            tfcounter = cluster_list[i].update()
+            true_false_list.append(tfcounter)
+        return not (False in true_false_list)
 
 
     def step(self):
