@@ -380,7 +380,7 @@ def test_algorithm_c():
     dset = a6dataset.Dataset(2, items)
     km1 = a6algorithm.Algorithm(dset, 2, [0,2])
     km1._partition()
-
+    print(km1.getClusters())
     # Test update()
     stable = km1._update()
     introcs.assert_float_lists_equal([0,4.5], km1.getClusters()[0].getCentroid())
