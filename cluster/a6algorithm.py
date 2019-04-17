@@ -128,6 +128,7 @@ class Algorithm(object):
                 point_to_add = self._dataset.getPoint(i)
                 cluster_added_to = self._nearest(point_to_add)
                 if(cluster_added_to == operating_cluster):
+                    print("index being added is " + str(i))
                     operating_cluster.addIndex(i)
 
 
@@ -145,14 +146,12 @@ class Algorithm(object):
         """
 
         cluster_list = self.getClusters()
-        true_false_list = []
 
         for i in range(len(cluster_list)):
-            tfcounter = None
-            tf_counter = cluster_list[i].update()
-            true_false_list.append(tf_counter)
+            if(cluster_list[i].update() == False):
+                return False
+        return True
 
-        return not (False in true_false_list)
 
     def step(self):
         """
@@ -161,12 +160,14 @@ class Algorithm(object):
         This method performs one cycle of the k-means algorithm. It then checks if
         the algorithm has converged and returns the appropriate value.
         """
-        # In a cycle, we partition the points and then update the means.
+
         self._partition()
-        if(self._update() == True):
+        if self._update() == True:
             return True
         else:
             return False
+
+
 
 
     # Part D
