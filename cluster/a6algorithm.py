@@ -182,10 +182,9 @@ class Algorithm(object):
         # You do not need a while loop for this.  Just write a for-loop, and exit
         # the for-loop (with a return) if you finish early.
 
-        # BEGIN REMOVE
-        pass
-        # END REMOVE
-        # IMPLEMENT ME
+        for i in range(maxstep):
+            if(self.step() == True):
+                return
 
 
     def findTotalError(self):
