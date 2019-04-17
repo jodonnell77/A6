@@ -162,10 +162,11 @@ class Algorithm(object):
         the algorithm has converged and returns the appropriate value.
         """
         # In a cycle, we partition the points and then update the means.
-        # BEGIN REMOVE
-        pass
-        # END REMOVE
-        # IMPLEMENT ME
+        self._partition()
+        if(self._update() == True):
+            return True
+        else:
+            return False
 
 
     # Part D
