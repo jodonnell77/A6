@@ -105,7 +105,7 @@ class Algorithm(object):
             if(i==0):
                 nearest_cluster = list_of_clusters[i]
                 nearest_distance = list_of_clusters[i].distance(point)
-    
+
             if(list_of_clusters[i].distance(point) < nearest_distance):
                 nearest_cluster = list_of_clusters[i]
                 nearest_distance = list_of_clusters[i].distance(point)
