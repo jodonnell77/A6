@@ -198,4 +198,9 @@ class Algorithm(object):
 
         Hint: the method and findError() would be helpful in the function.
         """
-        pass
+        error_counter = 0
+
+        for i in self.getClusters():
+            error_conuter += i.getError()
+        
+        return error_conuter
