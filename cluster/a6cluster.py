@@ -208,6 +208,9 @@ class Cluster(object):
             sum_cord = 0
             avg_cord = 0
             for x in range(len(indicielist)):
+                print(x)
+                print(n)
+                print(indicielist[x])
                 sum_cord += points[indicielist[x]][n]
                 avg_cord = sum_cord  / len(self.getContents())
             new_centroid.append(avg_cord)

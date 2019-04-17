@@ -121,13 +121,18 @@ class Algorithm(object):
         # dataset, find the nearest cluster and add the point to that cluster.
 
         for i in range(len(self.getClusters())):
-            clusters_in_algo = self.getClusters()
-            clusters_in_algo[i].clear()
+            self._clusters[i].clear()
 
-        for i in range(len(self._dataset.getContents())):
-            point_to_add = self._dataset.getPoint(i)
-            cluster_to_add = self._nearest(point_to_add)
-            cluster_to_add.addIndex(i)
+        for operating_cluster in self.getClusters():
+            for i in range(len(self._dataset.getContents())):
+                point_to_add = self._dataset.getPoint(i)
+                cluster_added_to = self._nearest(point_to_add)
+                if(cluster_added_to == operating_cluster):
+                    cluster_added_to.addIndex(i)
+
+
+
+
 
 
     # Part C
