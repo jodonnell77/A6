@@ -93,10 +93,24 @@ class Algorithm(object):
         Precondition: point is a list of numbers (int or float), with the same dimension
         as the dataset.
         """
-        # BEGIN REMOVE
-        pass
-        # END REMOVE
-        # IMPLEMENT ME
+
+        assert a6checks.is_point(point)
+        assert len(point) == self._dataset.getDimension()
+
+        list_of_clusters = self.getClusters()
+        nearest_cluster = None
+        nearest_distance = None
+
+        for i in range(len(list_of_clusters)):
+            if(i==0):
+                nearest_cluster = list_of_clusters[i]
+                nearest_distance = list_of_clusters[i].distance(point)
+    
+            if(list_of_clusters[i].distance(point) < nearest_distance):
+                nearest_cluster = list_of_clusters[i]
+                nearest_distance = list_of_clusters[i].distance(point)
+        return nearest_cluster
+
 
 
     def _partition(self):
@@ -106,10 +120,14 @@ class Algorithm(object):
         # First, clear each cluster of its points.  Then, for each point in the
         # dataset, find the nearest cluster and add the point to that cluster.
 
-        # BEGIN REMOVE
-        pass
-        # END REMOVE
-        # IMPLEMENT ME
+        for i in range(len(self.getClusters())):
+            clusters_in_algo = self.getClusters()
+            clusters_in_algo[i].clear()
+
+        for i in range(len(self._dataset.getContents())):
+            point_to_add = self._dataset.getPoint(i)
+            cluster_to_add = self._nearest(point_to_add)
+            cluster_to_add.addIndex(i)
 
 
     # Part C
@@ -120,10 +138,13 @@ class Algorithm(object):
         This method first updates the centroids of all clusters'.  When it is done, it
         checks whether any of them have changed. It then returns the appropriate value.
         """
-        # BEGIN REMOVE
-        pass
-        # END REMOVE
-        # IMPLEMENT ME
+
+        cluster_list = self.getClusters()
+
+        for i in range(len(cluster_list)):
+            if(cluster_list[i].update() == False):
+                return False
+        return True
 
 
     def step(self):
